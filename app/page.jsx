@@ -1,6 +1,7 @@
+import Link from "next/link";
+
 import classes from "./page.module.css";
 import ImageSlideshow from "@/components/image/imageSlideShow";
-import NavLink from "@/components/NavLink/NavLink";
 
 export default function Home() {
   return (
@@ -15,12 +16,8 @@ export default function Home() {
             <p>Taste & share food from all over the world.</p>
           </div>
           <div className={classes.cta}>
-            <li>
-              <NavLink to="/community">Join the Community</NavLink>
-            </li>
-            <li>
-              <NavLink to="/meals">Explore Meals</NavLink>
-            </li>
+            <Link href="/community">Join the Community</Link>
+            <Link href="/meals">Explore Meals</Link>
           </div>
         </div>
       </header>
