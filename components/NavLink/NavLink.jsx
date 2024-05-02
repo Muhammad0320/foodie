@@ -4,15 +4,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 function NavLink({ children, to }) {
-  const params = usePathname();
+  const path = usePathname();
 
   return (
     <Link
       href={to}
       className={
-        params.startsWith(to)
-          ? `${classes.active} ${classes.link}`
-          : classes.link
+        path.startsWith(to) ? `${classes.active} ${classes.link}` : classes.link
       }
     >
       {children}
