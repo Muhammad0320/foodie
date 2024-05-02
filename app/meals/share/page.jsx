@@ -1,4 +1,4 @@
-function MealsCommunity() {
+function MealsShare() {
   return (
     <div>
       <main>This is the meals communitys page</main>
@@ -6,4 +6,4 @@ function MealsCommunity() {
   );
 }
 
-export default MealsCommunity;
+export default MealsShare;
