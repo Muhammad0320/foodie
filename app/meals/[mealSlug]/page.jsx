@@ -8,7 +8,12 @@ function MealDetails({ params }) {
   return (
     <>
       <header className={classes.header}>
-        <Image src={meal.image} fill alt={meal.title} />
+        <Image
+          className={classes.image}
+          src={meal.image}
+          fill
+          alt={meal.title}
+        />
 
         <div className={classes.headerText}>
           <h1> {meal.title} </h1>
@@ -17,7 +22,7 @@ function MealDetails({ params }) {
             by <a href="meailto:name"> {meal.creator} </a>
           </p>
 
-          <p className={classes.summary}>meal.summary</p>
+          <p className={classes.summary}>{meal.summary}</p>
         </div>
       </header>
 
