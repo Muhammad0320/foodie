@@ -52,7 +52,11 @@ function ImagePicker({ name, label }) {
           required
         />
 
-        <button className={classes.button} onClick={handlePickImage}>
+        <button
+          className={classes.button}
+          onClick={handlePickImage}
+          type="button"
+        >
           Pick an image
         </button>
       </div>
