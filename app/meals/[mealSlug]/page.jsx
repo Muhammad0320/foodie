@@ -1,7 +1,10 @@
 import Image from "next/image";
 import classes from "./page.module.css";
+import { getMeal } from "@/lib/meals";
 
-function MealDetails() {
+function MealDetails({ params }) {
+  const meal = getMeal(params.mealSlug);
+
   return (
     <>
       <header className={classes.header}>
