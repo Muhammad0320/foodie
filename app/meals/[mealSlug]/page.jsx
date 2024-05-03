@@ -8,23 +8,23 @@ function MealDetails({ params }) {
   return (
     <>
       <header className={classes.header}>
-        <Image fill />
+        <Image src={meal.image} fill alt={meal.title} />
 
         <div className={classes.headerText}>
-          <h1>Title</h1>
+          <h1> {meal.title} </h1>
 
           <p className={classes.creator}>
-            by <a href="meailto:name">Name</a>
+            by <a href="meailto:name"> {meal.creator} </a>
           </p>
 
-          <p className={classes.summary}>Summary</p>
+          <p className={classes.summary}>meal.summary</p>
         </div>
       </header>
 
       <main>
         <p
           className={classes.instructions}
-          dangerouslySetInnerHTML={{ __html: "..." }}
+          dangerouslySetInnerHTML={{ __html: meal.instructions }}
         ></p>
       </main>
     </>
