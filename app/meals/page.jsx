@@ -2,9 +2,16 @@ import Link from "next/link";
 import classes from "./page.module.css";
 import MealsGrid from "@/components/meals/mealsGrid";
 import { getMeals } from "@/lib/meals";
+import { Suspense } from "react";
 
-async function Meals() {
+async function GetMeals() {
   const meals = await getMeals();
+
+  return <MealsGrid meals={meals} />;
+}
+
+function Meals() {
+  ///
 
   return (
     <>
@@ -15,13 +22,15 @@ async function Meals() {
           <span className={classes.highlight}> by you </span>{" "}
         </h1>
         <p>Choose your favorite recipe, its easy and fun!</p>
-        <p className={classes.cts}>
+        <p className={classes.cta}>
           <Link href="/meals/share"> share your favorite recipe </Link>
         </p>
       </header>
 
       <main>
-        <MealsGrid meals={meals} />
+        <Suspense fallback={<p> Fetching meals </p>}>
+          <GetMeals />
+        </Suspense>
       </main>
     </>
   );
