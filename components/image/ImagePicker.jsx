@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import classes from "./imagePicker.module.css";
+import Image from "next/image";
 
 function ImagePicker({ name, label }) {
   const inputRef = useRef();
@@ -34,6 +35,13 @@ function ImagePicker({ name, label }) {
       <label htmlFor={name}> {label} </label>
 
       <div className={classes.controls}>
+        <div className={classes.preview}>
+          {!pickImage && "pick an image"}
+          {pickImage && (
+            <Image src={pickImage} alt="This image picked by the user" fill />
+          )}
+        </div>
+
         <input
           type="file"
           name={name}
