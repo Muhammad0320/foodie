@@ -8,12 +8,9 @@ function MealDetails({ params }) {
   return (
     <>
       <header className={classes.header}>
-        <Image
-          className={classes.image}
-          src={meal.image}
-          fill
-          alt={meal.title}
-        />
+        <div className={classes.image}>
+          <Image src={meal.image} fill alt={meal.title} />
+        </div>
 
         <div className={classes.headerText}>
           <h1> {meal.title} </h1>
